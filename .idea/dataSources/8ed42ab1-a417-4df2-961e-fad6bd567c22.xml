@@ -30,7 +30,7 @@
       <ColNames>dept_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="14" parent="10" name="emp-id">
+    <column id="14" parent="10" name="emp_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
@@ -58,7 +58,7 @@
     </index>
     <key id="20" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>emp-id</ColNames>
+      <ColNames>emp_id</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="21" parent="10" name="fk_emp_dept">

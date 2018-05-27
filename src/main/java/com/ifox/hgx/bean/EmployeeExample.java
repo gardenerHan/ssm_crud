@@ -105,62 +105,62 @@ public class EmployeeExample {
         }
 
         public Criteria andEmpIdIsNull() {
-            addCriterion("emp-id is null");
+            addCriterion("emp_id is null");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdIsNotNull() {
-            addCriterion("emp-id is not null");
+            addCriterion("emp_id is not null");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdEqualTo(Integer value) {
-            addCriterion("emp-id =", value, "empId");
+            addCriterion("emp_id =", value, "empId");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdNotEqualTo(Integer value) {
-            addCriterion("emp-id <>", value, "empId");
+            addCriterion("emp_id <>", value, "empId");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdGreaterThan(Integer value) {
-            addCriterion("emp-id >", value, "empId");
+            addCriterion("emp_id >", value, "empId");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("emp-id >=", value, "empId");
+            addCriterion("emp_id >=", value, "empId");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdLessThan(Integer value) {
-            addCriterion("emp-id <", value, "empId");
+            addCriterion("emp_id <", value, "empId");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdLessThanOrEqualTo(Integer value) {
-            addCriterion("emp-id <=", value, "empId");
+            addCriterion("emp_id <=", value, "empId");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdIn(List<Integer> values) {
-            addCriterion("emp-id in", values, "empId");
+            addCriterion("emp_id in", values, "empId");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdNotIn(List<Integer> values) {
-            addCriterion("emp-id not in", values, "empId");
+            addCriterion("emp_id not in", values, "empId");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdBetween(Integer value1, Integer value2) {
-            addCriterion("emp-id between", value1, value2, "empId");
+            addCriterion("emp_id between", value1, value2, "empId");
             return (Criteria) this;
         }
 
         public Criteria andEmpIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("emp-id not between", value1, value2, "empId");
+            addCriterion("emp_id not between", value1, value2, "empId");
             return (Criteria) this;
         }
 
