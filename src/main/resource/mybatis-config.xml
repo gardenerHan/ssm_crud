@@ -12,4 +12,5 @@
         <package name="com.ifox.hgx.bean"></package>
     </typeAliases>
 
+
 </configuration>

@@ -60,4 +60,28 @@ public class Employee {
     public void setdId(Integer dId) {
         this.dId = dId;
     }
+
+    public Employee(Integer empId, String empName, String gender, String email, Integer dId, Department department) {
+        this.empId = empId;
+        this.empName = empName;
+        this.gender = gender;
+        this.email = email;
+        this.dId = dId;
+        this.department = department;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", empName='" + empName + '\'' +
+                ", gender='" + gender + '\'' +
+                ", email='" + email + '\'' +
+                ", dId=" + dId +
+                ", department=" + department +
+                '}';
+    }
+
+    public Employee() {
+    }
 }
