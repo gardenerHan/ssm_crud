@@ -14,7 +14,7 @@
     </context:component-scan>
 
     <!--引入配置文件-->
-    <context:property-placeholder location="dbConfig.properties"></context:property-placeholder>
+    <context:property-placeholder location="classpath:dbConfig.properties"></context:property-placeholder>
     <!--数据源-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${jdbc.driverClass}"></property>

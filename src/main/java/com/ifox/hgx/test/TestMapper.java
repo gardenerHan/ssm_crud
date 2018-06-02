@@ -1,7 +1,6 @@
 package com.ifox.hgx.test;
 
 
-import com.ifox.hgx.bean.Department;
 import com.ifox.hgx.bean.Employee;
 import com.ifox.hgx.dao.DepartmentMapper;
 import com.ifox.hgx.dao.EmployeeMapper;
@@ -9,11 +8,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
- 
+
 import java.util.UUID;
 
 @RunWith(SpringJUnit4ClassRunner.class)
