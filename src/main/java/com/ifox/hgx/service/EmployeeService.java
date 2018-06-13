@@ -16,4 +16,10 @@ public class EmployeeService {
     public List<Employee> getAll(){
       return employeeMapper.selectByExampleWithDept(null) ;
     }
+    public Employee getEmpById(Integer id){
+        return employeeMapper.selectByPrimaryKeyWithDept(id) ;
+    }
+    public void putEmp(Employee emp){
+        employeeMapper.updateByPrimaryKey(emp) ;
+    }
 }

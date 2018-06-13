@@ -8,11 +8,10 @@ import com.ifox.hgx.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class EmployeeController {
@@ -23,7 +22,7 @@ public class EmployeeController {
     //导入jackson
     @RequestMapping("/emps")
     @ResponseBody
-    public Msg getEmpsWithJson(@RequestParam(value = "pn", defaultValue = "1") Integer pn, Model model){
+    public Msg getEmpsWithJson(@RequestParam(value = "pn", defaultValue = "1") Integer pn,Model model){
         // 这不是一个分页查询；
         // 引入PageHelper分页插件
         // 在查询之前只需要调用，传入页码，以及每页的大小
@@ -36,6 +35,17 @@ public class EmployeeController {
 
         Msg msg =  Msg.success().add("pageInfo",page) ;
         return msg ;
+    }
+
+//    @RequestMapping(name = "/empU",method = RequestMethod.PUT)
+//    @ResponseBody
+//    public void putEmp(Employee employee){
+//        employeeService.putEmp(employee);
+//    }
+
+    @ModelAttribute
+    public void getEmp(@RequestParam (value = "id",required = false) Integer id, Map<String,Object> map){
+        System.out.println("ModelAttribute is Success");
     }
 
     //@RequestMapping("/emps")
