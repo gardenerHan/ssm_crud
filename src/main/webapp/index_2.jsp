@@ -105,21 +105,63 @@
             //构建元素
             var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
             var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+            if (result.extend.pageInfo.hasPreviousPage == false){
+                firstPageLi.addClass("disabled") ;
+                prePageLi.addClass("disabled") ;
+            }else {
+                firstPageLi.click(function () {
+                    to_page(1) ;
+                }) ;
+                prePageLi.click(function () {
+                    to_page(result.extend.pageInfo.pageNum -1 ) ;
+                }) ;
+            }
             ul.append(firstPageLi).append(prePageLi) ;
             $.each(result.extend.pageInfo.navigatepageNums,function (index,item) {
                 var numLi = $("<li></li>").append($("<a></a>").append(item));
                 if(result.extend.pageInfo.pageNum == item){
                     numLi.addClass("active");
                 }
+                numLi.click(function(){
+                    to_page(item);
+                });
                 ul.append(numLi);
             }) ;
             var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
-            var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"))  ;//标签没有结尾的话 相同的标签有两个 ，会自动补全会执行的两次。
+            var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"))  ;//标签没有结尾的话 相同的标签有两个 ，会自动补全会执行的两次
+            if(result.extend.pageInfo.hasNextPage == false){
+                nextPageLi.addClass("disabled");
+                lastPageLi.addClass("disabled");
+            }else{
+                nextPageLi.click(function(){
+                    to_page(result.extend.pageInfo.pageNum +1);
+                });
+                lastPageLi.click(function(){
+                    to_page(result.extend.pageInfo.pages);
+                });
+            }
             ul.append(nextPageLi).append(lastPageLi) ;
             var navEle = $("<nav></nav>").append(ul);
             navEle.appendTo("#page_nav_area");
 
 
+        }
+
+        function to_page(pn){
+            $.ajax({
+                url:"${ssm_path}/emps",
+                data:"pn="+pn,
+                type:"GET",
+                success:function(result){
+                    //console.log(result);
+                    //1、解析并显示员工数据
+                    build_emps_table(result);
+                    //2、解析并显示分页信息
+                    build_page_info(result);
+                    //3、解析显示分页条数据
+                    build_page_nav(result);
+                }
+            });
         }
 
     </script>

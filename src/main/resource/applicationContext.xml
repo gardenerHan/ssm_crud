@@ -19,9 +19,8 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${jdbc.driverClass}"></property>
         <property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
-        <property name="user" value="${jdbc.jdbcUrl}"></property>
-        <property name="password" value="${jdbc.user}"></property>
-        <property name="initialPoolSize" value="${jdbc.password}"></property>
+        <property name="user" value="${jdbc.user}"></property>
+        <property name="password" value="${jdbc.password}"></property>
     </bean>
 
     <!--配置和Mybatis的整合-->
